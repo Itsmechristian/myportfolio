@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "scss:compile": "node-sass --watch src/scss -o src/css"
+  },
+  "keywords": [],
+  "author": "Sijey",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0"
+  }
+}
