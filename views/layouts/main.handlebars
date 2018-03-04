@@ -47,25 +47,25 @@ window.addEventListener('scroll', function() {
 
 
 const landingpagelink = document.getElementById('landing-page-link')
-const arrowleft = document.getElementById('arrow')
-
+    , arrowleft = document.getElementById('arrow')
+    , nav = document.getElementById('navigation')
 landingpagelink.addEventListener('mouseover', function() {
-    landingpagelink.classList.add('hover');
-  setTimeout(function() {
-    landingpagelink.classList.remove('unhover');
-    }, 100)
+    this.classList.add('hover');
+    this.classList.remove('unhover');
     arrowleft.classList.add('arrowRotate');
     arrowleft.classList.remove('arrowDeRotate');
 })
 landingpagelink.addEventListener('mouseout', function() {
-    landingpagelink.classList.add('unhover');
-    setTimeout(function() {
-    landingpagelink.classList.remove('hover');
-    }, 100)
+    this.classLSist.add('unhover');
+    this.classList.remove('hover');
     arrowleft.classList.add('arrowDeRotate');
     arrowleft.classList.remove('arrowRotate');
 })
-
+window.addEventListener('scroll', function() {
+    let y = nav.getBoundingClientRect(),
+        x = window.pageYOffset
+        console.log(x)
+})
    </script>
 </body>
 </html>
