@@ -12,5 +12,5 @@
   "dependencies": {
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0"
-  }
+  } 
 }

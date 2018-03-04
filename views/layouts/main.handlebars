@@ -10,7 +10,6 @@
 </head>
 <body>
   {{{body}}}
-
   <script>
     //Heading Typing
         eval(function(p, a, c, k, e, d) {
@@ -42,9 +41,31 @@ window.addEventListener('scroll', function() {
    const windowYoffset = window.pageYOffset;
    const me = document.querySelector('.me')
    if(windowYoffset > 100) {
-       me.style.opacity = '1';
+       
    }
 })
+
+
+const landingpagelink = document.getElementById('landing-page-link')
+const arrowleft = document.getElementById('arrow')
+
+landingpagelink.addEventListener('mouseover', function() {
+    landingpagelink.classList.add('hover');
+  setTimeout(function() {
+    landingpagelink.classList.remove('unhover');
+    }, 100)
+    arrowleft.classList.add('arrowRotate');
+    arrowleft.classList.remove('arrowDeRotate');
+})
+landingpagelink.addEventListener('mouseout', function() {
+    landingpagelink.classList.add('unhover');
+    setTimeout(function() {
+    landingpagelink.classList.remove('hover');
+    }, 100)
+    arrowleft.classList.add('arrowDeRotate');
+    arrowleft.classList.remove('arrowRotate');
+})
+
    </script>
 </body>
 </html>
