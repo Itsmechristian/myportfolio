@@ -20,10 +20,38 @@ $pagelink.mouseout(function() {
   $arrow.removeClass('arrowRotate').addClass('arrowDeRotate');
 })
 
-$window.scroll(function() {
-    let y = this.pageYOffset;
-    if(y > 380) {
-      aboutHeader.classList.add('slideleft')
-      border.classList.add('slideleft')
+var $navbar = $("#navigation"),
+    y_pos = $navbar.offset().top,
+    about = $('#about-header').top
+    height = $navbar.height();
+console.log(y_pos)
+$(document).scroll(function() {
+    $('.drop-items').removeClass('show')
+
+    var scrollTop = $(this).scrollTop();
+    if (scrollTop > y_pos + height) {
+        $('.about-me-section').addClass('test')
+        $navbar.addClass("fixed").animate({
+            top: 0
+        });
+    } else if (scrollTop <= y_pos) {
+        $('.about-me-section').removeClass('test')
+        $navbar.removeClass("fixed").clearQueue().animate({
+            top: "-50px"
+        }, 0);
     }
+    if(scrollTop > 500) {
+        aboutHeader.classList.add('slideleft')
+        border.classList.add('slideleft')
+      }
+    if(scrollTop > 700) {
+        $('.about-wrapper-right img').addClass('flipinx')
+        $('.about-wrapper-left').addClass('slideleft')
+    }
+    if(scrollTop > 1200) {
+        $('.icon-item').addClass('flipinx')
+    }
+});
+$('.hamburger').click(function() {
+    $('.drop-items').toggleClass('show')
 })

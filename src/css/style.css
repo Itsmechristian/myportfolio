@@ -27,14 +27,13 @@ ul, li {
 
 .container {
   margin: 0 auto;
-  width: 60%;
-  max-width: 1200 !important; }
+  max-width: 1166px !important; }
 
 header {
   width: 100%;
   height: 100vh;
   background: url("/img/4kbackground.png") no-repeat;
-  background-size: 100%; }
+  background-size: 100% 100%; }
   header .container {
     height: 100%; }
     header .container .greetings {
@@ -81,36 +80,79 @@ header {
     header .container img.arrowDeRotate {
       transform: rotate(0deg); }
 
-nav {
+nav#navigation {
+  z-index: 999;
   width: 100%;
   background: #252934;
   height: 50px;
   padding: 0;
   margin: 0;
+  top: 0;
   border-bottom: 2px solid #fc0e4a; }
-  nav img {
-    padding: 10px 5px; }
-  nav .logoname {
+  nav#navigation img {
+    padding: 9px 5px; }
+  nav#navigation .logoname {
     position: relative;
     top: -20px; }
-    nav .logoname span {
+    nav#navigation .logoname span {
       color: #fc0e4a; }
-  nav .nav-links {
+  nav#navigation .nav-links {
     float: right;
     position: relative;
     top: 13px; }
-    nav .nav-links a {
+    nav#navigation .nav-links a {
       padding: 0px 5px; }
+  nav#navigation .hamburger {
+    display: none;
+    top: 5px;
+    float: right;
+    position: relative; }
+    nav#navigation .hamburger div {
+      position: relative;
+      border-radius: 3px;
+      background: #fff;
+      height: 5px;
+      width: 35px; }
+      nav#navigation .hamburger div:nth-child(1) {
+        top: 5px; }
+      nav#navigation .hamburger div:nth-child(2) {
+        top: 10px; }
+      nav#navigation .hamburger div:nth-child(3) {
+        top: 15px; }
+  nav#navigation .drop-items {
+    display: none;
+    height: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    left: 0;
+    background: #252934; }
+    nav#navigation .drop-items li {
+      margin: 25px; }
+  nav#navigation .drop-items.show {
+    display: block; }
+
+.fixed {
+  position: fixed;
+  width: 100%; }
+
+.about-me-section.test {
+  top: 50px; }
 
 .about-me-section {
-  height: 1500px;
+  position: relative;
+  height: auto;
   background: #fff; }
   .about-me-section #about-header {
+    position: relative;
+    z-index: 1;
     text-align: center;
     font-size: 2.4rem;
     opacity: 0;
-    padding: 60px 0px 15px 0px; }
+    padding: 8rem 0px 1rem 0px; }
   .about-me-section hr {
+    position: relative;
+    z-index: 1;
     max-width: 60px;
     animation-delay: 0.5s;
     border-top: 4px solid #444646; }
@@ -129,8 +171,11 @@ nav {
   to {
     opacity: 1;
     transform: translateX(0); } }
+  .about-me-section .about-wrapper-left.slideleft {
+    animation: slideleft 0.8s ease both; }
   .about-me-section .about-wrapper-left {
-    float: left;
+    opacity: 0;
+    display: inline-block;
     width: 50%;
     padding: 35px 0px; }
     .about-me-section .about-wrapper-left .profile-name small {
@@ -145,17 +190,97 @@ nav {
         color: #444646; }
     .about-me-section .about-wrapper-left .sb-32 {
       width: 370px; }
+
+@keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0; }
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-20deg);
+    transform: perspective(400px) rotateY(-20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  60% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+    opacity: 1; }
+  80% {
+    -webkit-transform: perspective(400px) rotateY(-5deg);
+    transform: perspective(400px) rotateY(5deg); }
+  100% {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+    opacity: 1; } }
   .about-me-section .about-wrapper-right {
-    float: right;
+    display: inline-block;
     width: 40%;
     padding: 35px 0px; }
     .about-me-section .about-wrapper-right img {
       float: right; }
+    .about-me-section .about-wrapper-right img.flipinx {
+      animation: flipInX 1s both; }
     .about-me-section .about-wrapper-right .my-info {
       height: 200px;
       width: 300px;
       background: #45474A; }
+  .about-me-section .icons {
+    margin: 40px 0px;
+    display: block;
+    width: 100%;
+    height: 400px; }
+    .about-me-section .icons .icons-wrapper {
+      float: left;
+      height: auto;
+      margin: 0 6%; }
+      .about-me-section .icons .icons-wrapper .icon-item {
+        opacity: 0;
+        -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        background: #fc0e4a;
+        height: 150px;
+        width: 150px; }
+      .about-me-section .icons .icons-wrapper .flipinx {
+        opacity: 1;
+        animation: flipInX 1s both; }
+      .about-me-section .icons .icons-wrapper .first-shape.flipinx {
+        animation-delay: 0s; }
+      .about-me-section .icons .icons-wrapper .second-shape.flipinx {
+        animation-delay: 0.3s; }
+      .about-me-section .icons .icons-wrapper .third-shape.flipinx {
+        animation-delay: 0.6s; }
+      .about-me-section .icons .icons-wrapper .fourth-shape.flipinx {
+        animation-delay: 0.9s; }
+
+.portfolio-section {
+  width: 100%;
+  height: 500px;
+  background: #fff; }
 
 @media screen and (max-width: 1200px) {
   .container {
-    width: 95%; } }
+    width: 90% !important; }
+  header {
+    background: url("/img/ipad.png");
+    background-size: 100% 100%; } }
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; }
+  .hamburger {
+    display: block !important; }
+  .container {
+    width: 85%; }
+  .about-me-section .about-wrapper-left {
+    float: none; }
+  .about-me-section .about-wrapper-right {
+    width: 100%; }
+  .about-me-section .about-wrapper-right img {
+    float: none !important; } }
+
+@media screen and (max-width: 500px) {
+  header {
+    background: url("/img/phone.png");
+    background-size: 100% 100%; } }
