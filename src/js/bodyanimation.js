@@ -24,7 +24,6 @@ var $navbar = $("#navigation"),
     y_pos = $navbar.offset().top,
     about = $('#about-header').top
     height = $navbar.height();
-console.log(y_pos)
 $(document).scroll(function() {
     $('.drop-items').removeClass('show')
 
