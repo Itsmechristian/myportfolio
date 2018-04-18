@@ -1,285 +1,92 @@
+:root {
+  scroll-behavior: smooth; }
+
 body {
-  background: #f1f1f1;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI",'Arial'; }
-
-svg {
-  color: #fc0e4a !important; }
+  -moz-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6, small {
-  color: #444646;
+h6 {
+  color: #333;
   margin: 0;
   padding: 0; }
 
 a {
-  color: #fff;
   text-decoration: none; }
 
-ul, li {
+ul {
   list-style-type: none; }
 
 .container {
-  margin: 0 auto;
-  max-width: 1166px !important; }
+  max-width: 1140px;
+  margin: 0 auto; }
+
+nav {
+  width: 100%;
+  height: 60px;
+  background: #292931; }
+  nav .container {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between; }
+    nav .container .logo {
+      height: 40px;
+      width: 100px;
+      background: #fff; }
+    nav .container .links {
+      padding: 10px 0px; }
+      nav .container .links li {
+        display: inline-block;
+        padding: 0px 10px; }
+        nav .container .links li a {
+          color: #fff;
+          font-family: sans-serif; }
 
 header {
-  width: 100%;
-  height: 100vh;
-  background: url("/images/portfolio/4kbackground.png") no-repeat;
-  background-size: 100% 100%; }
+  background: #333;
+  height: 700px; }
   header .container {
+    position: relative;
     height: 100%; }
     header .container .greetings {
-      position: relative;
-      top: 45%;
-      text-align: center;
-      transform: perspective(1px) translateY(-50%); }
-    header .container h1 {
-      font-size: 2.5rem;
-      font-weight: 400;
-      color: #fff; }
-      header .container h1 .myName {
-        color: #fc0e4a;
-        font-weight: 500; }
-    header .container a {
-      position: relative;
-      top: 25px;
-      margin: 10px 0px;
-      padding: 8px 45px 9px 15px;
-      border: 2px solid #fff; }
-    header .container #landing-page-link.hover {
-      animation: linkHoverOpacity 0.5s both; }
-    header .container #landing-page-link.unhover {
-      animation: linkUnHoverOpacity 0.5s both; }
-
-@keyframes linkHoverOpacity {
-  from {
-    background: rgba(252, 14, 74, 0); }
-  to {
-    background: rgba(252, 14, 74, 0.664); } }
-
-@keyframes linkUnHoverOpacity {
-  from {
-    background: rgba(252, 14, 74, 0.664); }
-  to {
-    background: rgba(252, 14, 74, 0); } }
-    header .container img {
-      position: relative;
-      top: 28px;
-      left: -37px;
-      transition: transform 0.2s ease-in-out; }
-    header .container img.arrowRotate {
-      transform: rotate(90deg); }
-    header .container img.arrowDeRotate {
-      transform: rotate(0deg); }
-
-nav#navigation {
-  z-index: 999;
-  width: 100%;
-  background: #252934;
-  height: 50px;
-  padding: 0;
-  margin: 0;
-  top: 0;
-  border-bottom: 2px solid #fc0e4a; }
-  nav#navigation img {
-    padding: 9px 5px; }
-  nav#navigation .logoname {
-    position: relative;
-    top: -20px; }
-    nav#navigation .logoname span {
-      color: #fc0e4a; }
-  nav#navigation .nav-links {
-    float: right;
-    position: relative;
-    top: 13px; }
-    nav#navigation .nav-links a {
-      padding: 0px 5px; }
-  nav#navigation .hamburger {
-    display: none;
-    top: 5px;
-    float: right;
-    position: relative; }
-    nav#navigation .hamburger div {
-      position: relative;
-      border-radius: 3px;
-      background: #fff;
-      height: 5px;
-      width: 35px; }
-      nav#navigation .hamburger div:nth-child(1) {
-        top: 5px; }
-      nav#navigation .hamburger div:nth-child(2) {
-        top: 10px; }
-      nav#navigation .hamburger div:nth-child(3) {
-        top: 15px; }
-  nav#navigation .drop-items {
-    display: none;
-    height: auto;
-    position: absolute;
-    width: 100%;
-    z-index: 999;
-    left: 0;
-    background: #252934; }
-    nav#navigation .drop-items li {
-      margin: 25px; }
-  nav#navigation .drop-items.show {
-    display: block; }
-
-.fixed {
-  position: fixed;
-  width: 100%; }
-
-.about-me-section.test {
-  top: 50px; }
-
-.about-me-section {
-  position: relative;
-  height: auto;
-  background: #fff; }
-  .about-me-section #about-header {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    font-size: 2.4rem;
-    opacity: 0;
-    padding: 8rem 0px 1rem 0px; }
-  .about-me-section hr {
-    position: relative;
-    z-index: 1;
-    max-width: 60px;
-    animation-delay: 0.5s;
-    border-top: 4px solid #444646; }
-  .about-me-section #about-header.slideleft {
-    animation: slideleft 0.8s ease both; }
-  .about-me-section hr {
-    opacity: 0; }
-  .about-me-section hr.slideleft {
-    animation: slideleft 0.8s ease both;
-    animation-delay: 0.5s; }
-
-@keyframes slideleft {
-  from {
-    opacity: 0;
-    transform: translateX(-300px); }
-  to {
-    opacity: 1;
-    transform: translateX(0); } }
-  .about-me-section .about-wrapper-left.slideleft {
-    animation: slideleft 0.8s ease both; }
-  .about-me-section .about-wrapper-left {
-    opacity: 0;
-    display: inline-block;
-    width: 50%;
-    padding: 35px 0px; }
-    .about-me-section .about-wrapper-left .profile-name small {
-      font-style: italic; }
-    .about-me-section .about-wrapper-left .lead {
-      margin: 20px 0px; }
-      .about-me-section .about-wrapper-left .lead h2 {
-        color: #7b7b7b;
-        font-weight: 400; }
-      .about-me-section .about-wrapper-left .lead span {
-        font-weight: 600;
-        color: #444646; }
-    .about-me-section .about-wrapper-left .sb-32 {
-      width: 370px; }
-
-@keyframes flipInX {
-  0% {
-    -webkit-transform: perspective(400px) rotateY(90deg);
-    transform: perspective(400px) rotateY(90deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0; }
-  40% {
-    -webkit-transform: perspective(400px) rotateY(-20deg);
-    transform: perspective(400px) rotateY(-20deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in; }
-  60% {
-    -webkit-transform: perspective(400px) rotateY(10deg);
-    transform: perspective(400px) rotateY(10deg);
-    opacity: 1; }
-  80% {
-    -webkit-transform: perspective(400px) rotateY(-5deg);
-    transform: perspective(400px) rotateY(5deg); }
-  100% {
-    -webkit-transform: perspective(400px);
-    transform: perspective(400px);
-    opacity: 1; } }
-  .about-me-section .about-wrapper-right {
-    display: inline-block;
-    width: 40%;
-    padding: 35px 0px; }
-    .about-me-section .about-wrapper-right img {
-      float: right; }
-    .about-me-section .about-wrapper-right img.flipinx {
-      animation: flipInX 1s both; }
-    .about-me-section .about-wrapper-right .my-info {
-      height: 200px;
-      width: 300px;
-      background: #45474A; }
-  .about-me-section .icons {
-    margin: 40px 0px;
-    display: block;
-    width: 100%;
-    height: 400px; }
-    .about-me-section .icons .icons-wrapper {
-      float: left;
-      height: auto;
-      margin: 0 6%; }
-      .about-me-section .icons .icons-wrapper .icon-item {
-        opacity: 0;
-        -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        background: #fc0e4a;
-        height: 150px;
-        width: 150px; }
-      .about-me-section .icons .icons-wrapper .flipinx {
-        opacity: 1;
-        animation: flipInX 1s both; }
-      .about-me-section .icons .icons-wrapper .first-shape.flipinx {
-        animation-delay: 0s; }
-      .about-me-section .icons .icons-wrapper .second-shape.flipinx {
-        animation-delay: 0.3s; }
-      .about-me-section .icons .icons-wrapper .third-shape.flipinx {
-        animation-delay: 0.6s; }
-      .about-me-section .icons .icons-wrapper .fourth-shape.flipinx {
-        animation-delay: 0.9s; }
-
-.portfolio-section {
-  width: 100%;
-  height: 500px;
-  background: #fff; }
-
-@media screen and (max-width: 1200px) {
-  .container {
-    width: 90% !important; }
-  header {
-    background-size: 100% 100%; } }
-
-@media screen and (max-width: 768px) {
-  .nav-links {
-    display: none; }
-  .hamburger {
-    display: block !important; }
-  .container {
-    width: 85%; }
-  .about-me-section .about-wrapper-left {
-    float: none; }
-  .about-me-section .about-wrapper-right {
-    width: 100%; }
-  .about-me-section .about-wrapper-right img {
-    float: none !important; } }
-
-@media screen and (max-width: 500px) {
-  header {
-    background: url("/images/portfolio/phone.png");
-    background-size: 100% 100%; } }
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999; }
+      header .container .greetings .wrap {
+        font-family: sans-serif;
+        position: relative;
+        border-top: #fff 2px solid;
+        border-left: #fff 2px solid;
+        padding: 10px; }
+        header .container .greetings .wrap h1 {
+          color: #fff;
+          font-size: 3rem; }
+          header .container .greetings .wrap h1:nth-child(1) {
+            font-weight: 600; }
+          header .container .greetings .wrap h1:nth-child(2) {
+            font-weight: 300; }
+        header .container .greetings .wrap .border {
+          position: absolute;
+          width: 50%;
+          bottom: 0;
+          left: 0;
+          border-bottom: #fff 2px solid; }
+      header .container .greetings .link {
+        margin: 30px 0px;
+        display: block;
+        text-align: center; }
+        header .container .greetings .link a {
+          color: #fff;
+          padding: 10px 20px;
+          border: 1px solid #fff; }
+          header .container .greetings .link a i {
+            padding-left: 10px; }

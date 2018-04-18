@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
     , Schema = mongoose.Schema
 
-const BestSellers = new Schema({
+const KidsProducts = new Schema({
     name: {
         type: String,
         required: [true, 'Name is required']
@@ -16,4 +16,4 @@ const BestSellers = new Schema({
     }
 })     
 
-module.exports = mongoose.model('bestsellers', BestSellers)
+module.exports = mongoose.model('kidsproducts', KidsProducts)

@@ -4,6 +4,8 @@ const express = require('express')
     , Product = require('../models/Products')
     , WeeklyProducts = require('../models/WeeklyProducts')
     , SalesProducts = require('../models/SaleProducts')
+    , BestSellers = require('../models/BestSellers')
+    , KidsProducts = require('../models/KidsProducts')
 
 router.use((req, res, next) => {
   global.myUrl = url.format({
@@ -102,9 +104,9 @@ router.get('/saleproducts', (req, res) => {
           return {
             id: e._id,
             productName: e.name,
-            originalPrice: e.price.toFixed(2),
-            percentOf: 20,
-            discountedTo: parseInt(e.discountedTo).toFixed(2),
+            originalPrice: '£' + e.price.toFixed(2),
+            percentOf: e.percentOf + '%',
+            discountedTo: '£' + parseInt(e.discountedTo).toFixed(2),
             image: myUrl + e.image
           }
         }))
@@ -124,6 +126,72 @@ router.post('/new/saleproducts', (req, res) => {
   .then(docs => {
     res.json({
       message: 'Created Succesfully'
+    })
+  })
+})
+
+router.get('/bestsellers', (req, res) => {
+  BestSellers.find()
+  .then(docs => {
+    if(!docs.length) {
+      res.json({ message: 'No Best Sellers Were Found'})
+    }
+    else{
+      res.json(docs.map(e => {
+        return {
+          id: e.id,
+          name: e.name,
+          price: '£' + e.price.toFixed(2),
+          image: myUrl + e.image
+        }
+      }))
+    }
+  })
+})
+
+router.post('/new/bestsellers', (req, res) => {
+  const newSaleProduct = new BestSellers({
+    name: req.body.name,
+    price: req.body.price,
+    image: req.body.image
+  })
+  newSaleProduct.save()
+  .then(docs => {
+    res.json({
+      message: 'Created Successfully'
+    })
+  })
+})
+
+router.get('/kidsproducts', (req, res) => {
+  KidsProducts.find()
+  .then(docs => {
+    if(!docs.length) {
+      res.json({ message: 'No Kids Products Were Found'})
+    }
+    else{
+      res.json(docs.map(e => {
+        return {
+           id: e.id,
+           name: e.name,
+           price:'£' + e.price.toFixed(2),
+           image: myUrl + e.image
+        }
+      }))
+    }
+  })
+})
+
+router.post('/new/kidsproducts', (req, res) => {
+  const newSaleProduct = new KidsProducts({
+    name: req.body.name,
+    price: req.body.price,
+    image: req.body.image
+  })
+  newSaleProduct.save()
+  .then(docs => {
+    res.json({
+      message: 'Created Successfully'
     })
   })
 })
