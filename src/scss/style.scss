@@ -241,10 +241,10 @@ header{
       }
 
       .project{
-        height: 250px;
-        width: 280px;
-        background: #333;
+        width: 28%;
         display: inline-block;
+        height: 250px;
+        background: #333;
         margin: 20px;
 
       }
@@ -284,5 +284,23 @@ footer{
     font-size: 1.2rem;
     position: relative;
     top: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container{
+    width: 80%;
+  }
+  .statement{
+    width: 80%;
+  }
+  .expertise{
+    width: 90% !important;
+  }
+  .works {
+    .project{
+      height: auto;
+      margin: 10px !important;
+   }
   }
 }

@@ -181,23 +181,25 @@ header {
         font-family: sans-serif;
         font-weight: 300; }
     .about .container .works .project {
-      height: 250px;
-      width: 280px;
-      background: #333;
+      width: 28%;
       display: inline-block;
+      height: 250px;
+      background: #333;
       margin: 20px; }
-  .about .container .get-in-touch .button {
-    text-align: center;
-    margin: 50px; }
-    .about .container .get-in-touch .button a {
-      border-radius: 50px;
-      padding: 15px 40px; }
-  .about .container .get-in-touch .logo {
-    display: block;
-    text-align: center; }
-    .about .container .get-in-touch .logo i {
-      color: #f4015f;
-      font-size: 3rem; }
+  .about .container .get-in-touch {
+    padding: 20px 0px; }
+    .about .container .get-in-touch .button {
+      text-align: center;
+      margin: 50px; }
+      .about .container .get-in-touch .button a {
+        border-radius: 50px;
+        padding: 15px 40px; }
+    .about .container .get-in-touch .logo {
+      display: block;
+      text-align: center; }
+      .about .container .get-in-touch .logo i {
+        color: #f4015f;
+        font-size: 3rem; }
 
 footer {
   width: 100%;
@@ -210,3 +212,14 @@ footer {
     font-size: 1.2rem;
     position: relative;
     top: 20px; }
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 80%; }
+  .statement {
+    width: 80%; }
+  .expertise {
+    width: 90% !important; }
+  .works .project {
+    height: auto;
+    margin: 10px !important; } }
