@@ -73,7 +73,8 @@ nav.hide {
 
 header {
   height: 700px;
-  background: #333; }
+  background-color: #333;
+  background-position: 70% 100%; }
   header .container {
     position: relative;
     height: 100%; }
@@ -115,6 +116,7 @@ header {
             padding-left: 10px; }
 
 .about {
+  background: #f9f9f9;
   height: auto; }
   .about .container .heading {
     padding: 50px 0px; }
