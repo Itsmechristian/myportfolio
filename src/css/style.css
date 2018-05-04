@@ -1,3 +1,19 @@
+@font-face {
+  font-family: segui;
+  src: url("/fonts/segui.ttf"); }
+
+@font-face {
+  font-family: seguisb;
+  src: url("/fonts/seguisb.ttf"); }
+
+@font-face {
+  font-family: poppins-semibold;
+  src: url("/fonts/Poppins-SemiBold.otf"); }
+
+@font-face {
+  font-family: poppins;
+  src: url("/fonts/Poppins-Regular.otf"); }
+
 :root {
   scroll-behavior: smooth; }
 
@@ -28,7 +44,8 @@ ul {
 
 .container {
   max-width: 1140px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
 
 @keyframes showNavbar {
   from {
@@ -45,185 +62,81 @@ ul {
 nav {
   width: 100%;
   height: 60px;
-  position: fixed;
-  background: #333;
-  z-index: 9999; }
+  z-index: 9999;
+  background: #fff; }
   nav .container {
     padding: 10px 0px;
     display: flex;
     justify-content: space-between; }
     nav .container .logo {
       height: 40px;
-      width: 100px;
-      background: #fff; }
+      width: auto; }
+      nav .container .logo h3 {
+        padding: 9px;
+        font-family: segui;
+        text-transform: uppercase;
+        color: #000; }
+        nav .container .logo h3 span {
+          font-family: seguisb;
+          color: #566ed5; }
     nav .container .links {
       padding: 10px 0px; }
       nav .container .links li {
         display: inline-block;
         padding: 0px 10px; }
+        nav .container .links li:nth-child(1) a {
+          color: #566ed5; }
         nav .container .links li a {
-          color: #fff; }
-
-nav.show {
-  position: fixed;
-  animation: showNavbar 1s both; }
-
-nav.hide {
-  animation: hideNavbar 1s; }
+          font-family: poppins-semibold;
+          color: #656565; }
 
 header {
   height: 700px;
-  background-color: #333;
-  background-position: 70% 100%; }
+  background-position: 50% 100%;
+  background-image: url("/images/portfolio/background.png");
+  background-color: #fff; }
   header .container {
-    position: relative;
     height: 100%; }
-    header .container .greetings {
+    header .container .text {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 999; }
-      header .container .greetings .wrap {
-        font-family: sans-serif;
-        position: relative;
-        border-top: #fff 2px solid;
-        border-left: #fff 2px solid;
-        padding: 10px; }
-        header .container .greetings .wrap h1 {
-          color: #fff;
-          font-size: 3rem; }
-          header .container .greetings .wrap h1:nth-child(1) {
-            font-weight: 600; }
-          header .container .greetings .wrap h1:nth-child(2) {
-            font-weight: 300; }
-        header .container .greetings .wrap .border {
-          position: absolute;
-          width: 50%;
-          bottom: 0;
-          left: 0;
-          border-bottom: #fff 2px solid; }
-      header .container .greetings .link {
-        margin: 30px 0px;
-        display: block;
-        text-align: center; }
-        header .container .greetings .link a {
-          color: #fff;
-          padding: 10px 20px;
-          border: 1px solid #fff;
-          font-family: sans-serif; }
-          header .container .greetings .link a i {
-            padding-left: 10px; }
+      top: 30%; }
+      header .container .text h3, header .container .text h1, header .container .text small {
+        font-family: poppins; }
+      header .container .text h3 {
+        font-weight: 300;
+        font-size: 3rem;
+        color: #566ed5; }
+      header .container .text h1 {
+        font-weight: bold;
+        font-size: 3.5rem; }
+      header .container .text small {
+        font-size: 0.9rem;
+        color: #656565; }
 
 .about {
-  background: #f9f9f9;
-  height: auto; }
-  .about .container .heading {
-    padding: 50px 0px; }
-    .about .container .heading h1 {
-      font-weight: 300;
-      font-family: sans-serif;
-      text-align: center; }
-    .about .container .heading hr {
-      border-top: 2px solid #333;
-      max-width: 80px; }
-  .about .container .statement {
-    margin: 0 auto;
-    width: 60%; }
-    .about .container .statement h3 {
-      color: #999;
-      text-align: center;
-      font-weight: 300; }
-  .about .container .button {
-    text-align: center;
-    margin: 50px; }
-    .about .container .button a {
-      position: relative;
-      top: 12px;
-      border-radius: 20px;
-      padding: 10px 40px;
-      background: #f4015f;
-      font-weight: 300;
-      color: #fff; }
-  .about .container .expertise {
-    text-align: center;
-    width: 60%;
-    margin: 15px auto;
-    padding: 30px 0px; }
-  .about .container .skills {
-    padding: 2px;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    border: 3px solid #333;
-    display: inline-block;
-    margin: 30px; }
-    .about .container .skills .wrap {
-      height: 80%;
-      width: 100%;
-      text-align: center;
-      padding: 20px 0px;
-      position: relative; }
-      .about .container .skills .wrap h3 {
-        font-weight: 300;
-        margin: 0;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%); }
-  .about .container > hr {
-    max-width: 80px;
-    border-top: 3px solid #f4015f; }
-  .about .container .works {
-    margin: 0 auto;
-    padding: 30px 0px;
-    width: 90%; }
-    .about .container .works .heading {
-      margin: 50px 0px;
-      text-align: center; }
-      .about .container .works .heading h1 {
-        font-family: sans-serif;
-        font-weight: 300; }
-    .about .container .works .project {
-      width: 28%;
-      display: inline-block;
-      height: 250px;
-      background: #333;
-      margin: 20px; }
-  .about .container .get-in-touch {
-    padding: 20px 0px; }
-    .about .container .get-in-touch .button {
-      text-align: center;
-      margin: 50px; }
-      .about .container .get-in-touch .button a {
-        border-radius: 50px;
-        padding: 15px 40px; }
-    .about .container .get-in-touch .logo {
-      display: block;
-      text-align: center; }
-      .about .container .get-in-touch .logo i {
-        color: #f4015f;
-        font-size: 3rem; }
-
-footer {
-  width: 100%;
-  display: block;
-  background: #333;
-  height: 60px; }
-  footer p {
-    text-align: center;
-    color: #fff;
-    font-size: 1.2rem;
-    position: relative;
-    top: 20px; }
-
-@media screen and (max-width: 1200px) {
-  .container {
-    width: 80%; }
-  .statement {
-    width: 80%; }
-  .expertise {
-    width: 90% !important; }
-  .works .project {
-    height: auto;
-    margin: 10px !important; } }
+  height: auto;
+  background: #f9f9f9; }
+  .about .container {
+    padding: 100px 0; }
+    .about .container .heading {
+      width: 60%; }
+      .about .container .heading h1, .about .container .heading h3, .about .container .heading p {
+        font-family: poppins; }
+      .about .container .heading h1 {
+        font-weight: 400; }
+        .about .container .heading h1 span {
+          color: #35b5d0; }
+      .about .container .heading h3 {
+        font-weight: bold;
+        color: #35b5d0; }
+        .about .container .heading h3 span {
+          font-weight: 300;
+          font-style: italic; }
+      .about .container .heading p {
+        color: #b4b4b4; }
+      .about .container .heading a {
+        position: relative;
+        top: 20px;
+        color: #fff;
+        background: #35b5d0;
+        padding: 10px 50px; }

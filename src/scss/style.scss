@@ -1,5 +1,22 @@
 $black: #292931;
 
+@font-face {
+  font-family: segui;
+  src: url('/fonts/segui.ttf');
+}
+@font-face {
+  font-family: seguisb;
+  src: url('/fonts/seguisb.ttf');
+}
+@font-face {
+  font-family: poppins-semibold;
+  src: url('/fonts/Poppins-SemiBold.otf')
+}
+@font-face {
+  font-family: poppins;
+  src: url('/fonts/Poppins-Regular.otf');
+}
+
 :root{
   scroll-behavior: smooth;
 }
@@ -31,6 +48,7 @@ ul{
 .container{
   max-width: 1140px;
   margin: 0 auto;
+  position: relative;
 }
 @keyframes showNavbar {
   from {
@@ -51,9 +69,8 @@ ul{
 nav{
   width: 100%;
   height: 60px;
-  position: fixed;
-  background: #333;
   z-index: 9999;
+  background: #fff;
 
   .container{
     padding: 10px 0px;
@@ -62,8 +79,19 @@ nav{
 
     .logo{
       height: 40px;
-      width: 100px;
-      background: #fff;
+      width: auto;
+
+      h3 {
+        padding: 9px;
+        font-family: segui;
+        text-transform: uppercase;
+        color: #000;
+
+        span{
+        font-family: seguisb;
+        color: #566ed5;  
+        }
+      }
     }
     .links{
       padding: 10px 0px;
@@ -72,239 +100,104 @@ nav{
         display: inline-block;
         padding: 0px 10px;
 
+        &:nth-child(1) {
+          a{
+            color: #566ed5;
+          }
+        }
         a{
-          color: #fff;
+          font-family: poppins-semibold;
+          color: #656565;
+        
         }
       }
     }
   }
 }
-nav.show{
-  position: fixed;
-  animation: showNavbar 1s both;
-}
-nav.hide{
-  animation: hideNavbar 1s;
-}
 
 header{
   height: 700px;
-  background-color: #333;
-  background-position: 70% 100%;
+  background-position: 50% 100%;
+  background-image: url('/images/portfolio/background.png');
+  background-color: #fff;
 
   .container{
-    position: relative;
-    height: 100%; 
+    height: 100%;
 
-    .greetings{
+    .text{
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 999;
-     
-      .wrap{
-        font-family: sans-serif;
-        position: relative;
-        border-top: #fff 2px solid;
-        border-left: #fff 2px solid;
-        padding: 10px;        
-
-        h1{
-          color: #fff;
-          font-size: 3rem;
-
-          &:nth-child(1) {
-            font-weight: 600;
-          } 
-          &:nth-child(2) {
-            font-weight: 300;
-          }
-        }
-
-        .border{
-          position: absolute;
-          width: 50%;
-          bottom: 0;
-          left: 0;
-          border-bottom: #fff 2px solid;
-        }
+      top: 30%;
+  
+      h3, h1, small {
+        font-family: poppins;
       }
-      .link{
-        margin: 30px 0px;
-        display: block;
-        text-align: center;
+      h3{
+        font-weight: 300;
+        font-size: 3rem;
+        color: #566ed5;
+      }
 
-        a{
-          color: #fff;
-          padding: 10px 20px;
-          border: 1px solid #fff;
-          font-family: sans-serif;
+      h1{
+        font-weight: bold;
+        font-size: 3.5rem;
+      }
 
-          i{
-            padding-left: 10px;
-          }
-        }
+      small{
+        font-size: 0.9rem;
+        color: #656565;
       }
     }
   }
 }
 .about{
-  background: #f9f9f9;
   height: auto;
+  background: #f9f9f9;
 
   .container{
+    padding: 100px 0;
+
     .heading{
-      padding: 50px 0px;
-  
-      h1{
-        font-weight: 300;
-        font-family: sans-serif;
-        text-align: center;
-      }
-  
-      hr{
-        border-top: 2px solid #333;
-        max-width: 80px;
-      }
-    }
-    .statement{
-      margin: 0 auto;
       width: 60%;
-      
-      h3{
-        color: #999;
-        text-align: center;
-        font-weight: 300;
+
+      h1,h3, p{
+        font-family: poppins;
       }
-    }
-    .button{
-      text-align: center;
-      margin: 50px;
+      
+      h1{
+        font-weight: 400;
+  
+        span{
+          color: #35b5d0;
+        }
+      }
+
+      h3{
+        font-weight: bold;
+        color: #35b5d0;
+        
+        span{
+          font-weight: 300;
+          font-style: italic;
+        }
+      }
+
+      p{
+        color: #b4b4b4;
+      }
 
       a{
         position: relative;
-        top: 12px;
-        border-radius: 20px;
-        padding: 10px 40px;
-        background: #f4015f;
-        font-weight: 300;
+        top: 20px;
         color: #fff;
-      }
-    }
-    .expertise{
-      text-align: center;
-      width: 60%;
-      margin: 15px auto;
-      padding: 30px 0px;
-    }
-    .skills{
-      padding: 2px;
-      border-radius: 50%;
-      height: 150px;
-      width: 150px;
-      border: 3px solid #333;
-      display: inline-block;
-      margin: 30px;
-
-      .wrap{
-        height: 80%;
-        width: 100%;
-        text-align: center;
-        padding: 20px 0px;
-        position: relative;
-        
-
-        h3{
-          font-weight: 300;
-          margin: 0;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-        }
-      }
-    }
-    > hr{
-      max-width: 80px;
-      border-top: 3px solid #f4015f;
-    }
-    .works{
-      margin: 0 auto;
-      padding: 30px 0px;
-      width: 90%;
-
-      .heading{
-        margin: 50px 0px;
-        text-align: center;
-
-        h1{
-          font-family: sans-serif;
-          font-weight: 300;
-        }
-      }
-
-      .project{
-        width: 28%;
-        display: inline-block;
-        height: 250px;
-        background: #333;
-        margin: 20px;
-
-      }
-    }
-    .get-in-touch{
-      padding: 20px 0px;
-      .button{
-        text-align: center;
-        margin: 50px;
-  
-        a{
-          border-radius: 50px;
-          padding: 15px 40px;
-        }
-      }
-      .logo{
-        display: block;
-        text-align: center;
-
-        i{
-          color: #f4015f;
-          font-size: 3rem;
-        }
+        background: #35b5d0;
+        padding: 10px 50px;
       }
     }
   }
+ 
 }
-footer{
-  width: 100%;
-  display: block;
-  background: #333;
-  height: 60px;
-
-  p{
-    text-align: center;
-    color: #fff;
-    font-size: 1.2rem;
-    position: relative;
-    top: 20px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
+.skills{
   .container{
-    width: 80%;
-  }
-  .statement{
-    width: 80%;
-  }
-  .expertise{
-    width: 90% !important;
-  }
-  .works {
-    .project{
-      height: auto;
-      margin: 10px !important;
-   }
+
   }
 }

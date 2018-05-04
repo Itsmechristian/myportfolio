@@ -1,3 +1,5 @@
+"use strict"
+
 let links = document.querySelectorAll('.aboutlink');
 
 links.forEach(e => {
@@ -10,5 +12,24 @@ links.forEach(e => {
          top: section.offsetTop - 50,
          behavior: 'smooth'
      })
+    })
+})
+
+
+
+window.addEventListener('scroll', function() {
+    let about = document.getElementById('about')
+    let windowHeight = this.innerHeight
+
+
+    if(this.pageYOffset > (about.offsetTop - windowHeight) + 100) {
+        console.log(1)
+    }
+})
+
+
+(function() {
+    window.addEventListener('scroll', function() {
+        
     })
 })

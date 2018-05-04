@@ -84,5 +84,5 @@ app.use('/api', kamaShop, (req, res) => {
 })
 
 
-const port = 5050;
+const port = 3000;
 app.listen(port, console.log(`Connected to ${port}`))
