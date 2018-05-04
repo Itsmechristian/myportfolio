@@ -33,11 +33,14 @@ h6 {
   color: #333;
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: poppins, sans-serif; }
 
 a {
-  font-family: sans-serif;
+  font-family: poppins, sans-serif;
   text-decoration: none; }
+
+p {
+  font-family: poppins; }
 
 ul {
   list-style-type: none; }
@@ -46,18 +49,6 @@ ul {
   max-width: 1140px;
   margin: 0 auto;
   position: relative; }
-
-@keyframes showNavbar {
-  from {
-    transform: translateY(-60px); }
-  to {
-    transform: translateY(0px); } }
-
-@keyframes hideNavbar {
-  from {
-    transform: translateY(0px); }
-  to {
-    transform: translateY(-60px); } }
 
 nav {
   width: 100%;
@@ -94,22 +85,35 @@ header {
   height: 700px;
   background-position: 50% 100%;
   background-image: url("/images/portfolio/background.png");
+  background-repeat: no-repeat;
   background-color: #fff; }
   header .container {
     height: 100%; }
     header .container .text {
       position: absolute;
       top: 30%; }
-      header .container .text h3, header .container .text h1, header .container .text small {
-        font-family: poppins; }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px); }
+  to {
+    opacity: 1;
+    transform: translateY(0px); } }
       header .container .text h3 {
+        animation: slideUp 1s both;
         font-weight: 300;
         font-size: 3rem;
         color: #566ed5; }
       header .container .text h1 {
+        animation: slideUp 1s both;
+        animation-delay: .5s;
         font-weight: bold;
         font-size: 3.5rem; }
       header .container .text small {
+        animation: slideUp 1s both;
+        animation-delay: 1s;
+        font-family: poppins;
         font-size: 0.9rem;
         color: #656565; }
 
@@ -120,23 +124,121 @@ header {
     padding: 100px 0; }
     .about .container .heading {
       width: 60%; }
-      .about .container .heading h1, .about .container .heading h3, .about .container .heading p {
-        font-family: poppins; }
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-200px); }
+  to {
+    opacity: 1;
+    transform: translateX(0px); } }
       .about .container .heading h1 {
+        opacity: 0;
+        transform: translateX(-200px);
         font-weight: 400; }
         .about .container .heading h1 span {
           color: #35b5d0; }
+        .about .container .heading h1.animate {
+          animation: both 1s slideLeft; }
       .about .container .heading h3 {
+        opacity: 0;
+        transform: translateX(-200px);
         font-weight: bold;
         color: #35b5d0; }
         .about .container .heading h3 span {
           font-weight: 300;
           font-style: italic; }
-      .about .container .heading p {
+        .about .container .heading h3.animate {
+          animation: both 1s slideLeft;
+          animation-delay: .5s; }
+      .about .container .heading .bodytext-wrapper {
+        opacity: 0;
+        transform: translateX(-200px); }
+        .about .container .heading .bodytext-wrapper p {
+          color: #b4b4b4; }
+        .about .container .heading .bodytext-wrapper a {
+          position: relative;
+          top: 20px;
+          color: #fff;
+          background: #35b5d0;
+          padding: 10px 50px; }
+        .about .container .heading .bodytext-wrapper.animate {
+          animation: both 1s slideLeft; }
+
+.good-at {
+  height: auto;
+  background-color: #fff; }
+  .good-at .container {
+    padding: 100px 0px;
+    height: 100%; }
+    .good-at .container .heading h1 span {
+      color: #ED46AA; }
+    .good-at .container section {
+      display: flex;
+      margin: 40px 0px;
+      text-align: center; }
+      .good-at .container section .section-wrapper {
+        padding: 0px 5%;
+        flex: 1; }
+
+.other-skills {
+  height: auto;
+  background-repeat: no-repeat;
+  background-color: #f2f2f2;
+  background-image: url("/images/portfolio/background2.jpg"); }
+  .other-skills .container {
+    padding: 200px 0 100px 0; }
+    .other-skills .container .heading {
+      display: inline-block;
+      vertical-align: top;
+      width: 49%; }
+      .other-skills .container .heading h1 span {
+        color: #6a5acd; }
+      .other-skills .container .heading p {
         color: #b4b4b4; }
-      .about .container .heading a {
-        position: relative;
-        top: 20px;
-        color: #fff;
-        background: #35b5d0;
-        padding: 10px 50px; }
+    .other-skills .container .skill-wrapper {
+      display: inline-block;
+      vertical-align: top;
+      width: 49%; }
+      .other-skills .container .skill-wrapper .skill {
+        width: 70%;
+        margin: 20px auto; }
+        .other-skills .container .skill-wrapper .skill .text {
+          display: flex;
+          justify-content: space-between; }
+          .other-skills .container .skill-wrapper .skill .text h3 {
+            font-size: 1rem; }
+        .other-skills .container .skill-wrapper .skill .bar {
+          height: 4px;
+          background: #fff;
+          width: 100%; }
+          .other-skills .container .skill-wrapper .skill .bar .bar-percent {
+            height: 100%; }
+        .other-skills .container .skill-wrapper .skill.html .text h3 {
+          color: #6a5acd; }
+        .other-skills .container .skill-wrapper .skill.html .bar .bar-percent {
+          background-color: #6a5acd;
+          width: 90%; }
+        .other-skills .container .skill-wrapper .skill.css .text h3 {
+          color: #ed46aa; }
+        .other-skills .container .skill-wrapper .skill.css .bar .bar-percent {
+          background-color: #ed46aa;
+          width: 90%; }
+        .other-skills .container .skill-wrapper .skill.adobe .text h3 {
+          color: #35bdcf; }
+        .other-skills .container .skill-wrapper .skill.adobe .bar .bar-percent {
+          background-color: #35bdcf;
+          width: 70%; }
+        .other-skills .container .skill-wrapper .skill.laravel .text h3 {
+          color: #3c74c6; }
+        .other-skills .container .skill-wrapper .skill.laravel .bar .bar-percent {
+          background-color: #3c74c6;
+          width: 60%; }
+
+.projects {
+  height: 700px; }
+  .projects .container {
+    padding: 100px 0;
+    height: 100%; }
+    .projects .container .heading h1 span {
+      color: #3c74c6; }

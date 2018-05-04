@@ -16,20 +16,20 @@ links.forEach(e => {
 })
 
 
-
 window.addEventListener('scroll', function() {
-    let about = document.getElementById('about')
+    //About Section
+    let headerText = document.querySelectorAll('#header-text');
+    let bodyText = document.querySelector('.bodytext-wrapper')
     let windowHeight = this.innerHeight
 
+    headerText.forEach(e => {
+        if(window.pageYOffset > (800 - windowHeight) + e.offsetTop) {
+            e.classList.add('animate')
+        }
+    })
 
-    if(this.pageYOffset > (about.offsetTop - windowHeight) + 100) {
-        console.log(1)
+    if(window.pageYOffset > (900 - windowHeight) + bodyText.offsetTop) {
+        bodyText.classList.add('animate')
     }
 })
 
-
-(function() {
-    window.addEventListener('scroll', function() {
-        
-    })
-})

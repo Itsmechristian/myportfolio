@@ -36,11 +36,14 @@ h6{
  color: #333;
  margin: 0;
  padding: 0;
- font-family: sans-serif;
+ font-family: poppins, sans-serif;
 }
 a{
-  font-family: sans-serif;
+  font-family: poppins, sans-serif;
   text-decoration: none;
+}
+p{
+  font-family: poppins;
 }
 ul{
   list-style-type: none;
@@ -50,22 +53,7 @@ ul{
   margin: 0 auto;
   position: relative;
 }
-@keyframes showNavbar {
-  from {
-    transform: translateY(-60px);
-  }
-  to {
-    transform: translateY(0px);
-  }
-}
-@keyframes hideNavbar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-60px);
-  }
-}
+
 nav{
   width: 100%;
   height: 60px;
@@ -86,6 +74,7 @@ nav{
         font-family: segui;
         text-transform: uppercase;
         color: #000;
+     
 
         span{
         font-family: seguisb;
@@ -119,6 +108,7 @@ header{
   height: 700px;
   background-position: 50% 100%;
   background-image: url('/images/portfolio/background.png');
+  background-repeat: no-repeat;
   background-color: #fff;
 
   .container{
@@ -128,21 +118,36 @@ header{
       position: absolute;
       top: 30%;
   
-      h3, h1, small {
-        font-family: poppins;
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(60px);
+        }
+        to{
+          opacity: 1;
+          transform: translateY(0px);
+        }
       }
+      
       h3{
+        animation: slideUp 1s both;
         font-weight: 300;
         font-size: 3rem;
         color: #566ed5;
       }
 
       h1{
+        animation: slideUp 1s both;
+        animation-delay: .5s;
         font-weight: bold;
         font-size: 3.5rem;
       }
 
       small{
+        animation: slideUp 1s both;
+        animation-delay: 1s;
+        font-family: poppins;
         font-size: 0.9rem;
         color: #656565;
       }
@@ -159,19 +164,33 @@ header{
     .heading{
       width: 60%;
 
-      h1,h3, p{
-        font-family: poppins;
+      @keyframes slideLeft {
+        from{
+          opacity: 0;
+          transform: translateX(-200px);
+        }
+        to{
+          opacity: 1;
+          transform: translateX(0px);
+        }
       }
-      
+
       h1{
+        opacity: 0;
+        transform: translateX(-200px);
         font-weight: 400;
   
         span{
           color: #35b5d0;
         }
+        &.animate{
+           animation: both 1s slideLeft;
+        }
       }
 
       h3{
+        opacity: 0;
+        transform: translateX(-200px);
         font-weight: bold;
         color: #35b5d0;
         
@@ -179,25 +198,188 @@ header{
           font-weight: 300;
           font-style: italic;
         }
+
+        &.animate{
+          animation: both 1s slideLeft;
+          animation-delay: .5s;
+        }
       }
 
-      p{
-        color: #b4b4b4;
-      }
+      .bodytext-wrapper{
+        opacity: 0;
+        transform: translateX(-200px);
 
-      a{
-        position: relative;
-        top: 20px;
-        color: #fff;
-        background: #35b5d0;
-        padding: 10px 50px;
+        p{
+          color: #b4b4b4;
+        }
+  
+        a{
+          position: relative;
+          top: 20px;
+          color: #fff;
+          background: #35b5d0;
+          padding: 10px 50px;
+        }
+        &.animate{
+          animation: both 1s slideLeft;
+        }
       }
     }
   }
  
 }
-.skills{
-  .container{
+.good-at{
+  height: auto;
+  background-color: #fff;
 
+  .container{
+    padding: 100px 0px;
+    height: 100%;
+
+    .heading{
+      h1{
+
+        span{
+          color: #ED46AA; 
+        }
+      }
+    }
+    section{
+      display: flex;
+      margin: 40px 0px;
+      text-align: center;
+
+      .section-wrapper{
+        padding: 0px 5%;
+        flex: 1;
+
+      }
+    }
+  }
+}
+.other-skills{
+  height: auto;
+  background-repeat: no-repeat;
+  background-color: #f2f2f2;
+  background-image: url('/images/portfolio/background2.jpg');
+  
+  .container{
+    padding: 200px 0 100px 0;
+    
+    .heading{
+      display: inline-block;
+      vertical-align: top;
+      width: 49%;
+
+   
+
+      h1{
+        span{
+          color: #6a5acd;      
+        }
+      }
+
+      p{
+          color: #b4b4b4;
+      }
+    }
+    .skill-wrapper{
+      display: inline-block;
+      vertical-align: top;
+      width: 49%;
+
+      .skill{
+        width: 70%;
+        margin: 20px auto;
+
+        .text{
+          display: flex;
+          justify-content: space-between;
+
+          h3{
+            font-size: 1rem;
+          }
+        }
+        .bar{
+          height: 4px;
+          background: #fff;
+          width: 100%;
+  
+          .bar-percent{
+            height: 100%;
+          }
+        }
+
+        &.html{
+          .text{
+            h3{
+              color: #6a5acd;
+            }
+          }
+       
+          .bar{
+            .bar-percent{
+            background-color: #6a5acd;
+            width: 90%;
+            }
+          }
+        }
+        &.css{
+          .text{
+            h3{
+              color: #ed46aa;
+            }
+          }
+          .bar{
+            .bar-percent{
+            background-color: #ed46aa;
+            width: 90%;
+            }
+          }
+        }
+        &.adobe{
+          .text{
+            h3{
+              color: #35bdcf;
+            }
+          }
+          .bar{
+            .bar-percent{
+            background-color: #35bdcf;
+            width: 70%;
+            }
+          }
+        }
+        &.laravel{
+          .text{
+            h3{
+              color: #3c74c6;
+            }
+          }
+          .bar{
+            .bar-percent{
+            background-color: #3c74c6;
+            width: 60%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.projects{
+  height: 700px;
+  
+  .container{
+    padding: 100px 0;
+    height: 100%;
+
+    .heading{
+      h1{
+        span{
+          color: #3c74c6;
+        }
+      }
+    }
   }
 }
