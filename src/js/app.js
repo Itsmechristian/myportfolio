@@ -4,32 +4,50 @@ let links = document.querySelectorAll('.aboutlink');
 
 links.forEach(e => {
     e.addEventListener('click', function(event) {      event.stopPropagation()
-        
     
      let section = document.getElementById(e.textContent.toLowerCase());
         
      window.scrollTo({
-         top: section.offsetTop - 50,
+         top: section.offsetTop,
          behavior: 'smooth'
      })
     })
 })
 
+/* Check if the client height is greater than range so it will automatically animate */ 
+window.onload = animationHandler;
 
-window.addEventListener('scroll', function() {
+/* Animate Scroll Handler */
+window.addEventListener('scroll', animationHandler);
+
+
+function animationHandler() {
+    /**
+     * 
+     * @param {string} element Element to perform animation
+     * @param {number} range Range from the top to animate
+     */
+
     //About Section
-    let headerText = document.querySelectorAll('#header-text');
-    let bodyText = document.querySelector('.bodytext-wrapper')
-    let windowHeight = this.innerHeight
 
-    headerText.forEach(e => {
-        if(window.pageYOffset > (800 - windowHeight) + e.offsetTop) {
-            e.classList.add('animate')
-        }
-    })
+    let windowHeight = window.innerHeight
 
-    if(window.pageYOffset > (900 - windowHeight) + bodyText.offsetTop) {
-        bodyText.classList.add('animate')
+    animateElement('#header-text', 700);
+    animateElement('.bodytext-wrapper', 800)
+    animateElement('.sectionTwoHeader', 1100)
+    animateElement('.sectionTwoIconWrapper', 1300);
+    animateElement('.sectionTwoIcon', 1300);
+    animateElement('.icon-paragraph', 1300);
+    animateElement('.otherSkillsHeading', 1700);
+    animateElement('.skill-wrapper', 1700);
+  
+
+     function animateElement(element, range) {
+        let el = document.querySelectorAll(element);
+        el.forEach(e => {
+            if(window.pageYOffset > (range - windowHeight) + e.offsetTop) {
+                e.classList.add('animate')
+            }
+        })
     }
-})
-
+}
