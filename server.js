@@ -21,7 +21,9 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'src')))
 
 app.get('/', (req, res) => {
- res.render('body')
+ res.render('body', {
+   title: 'Welcome (ᵔᴥᵔ)'
+ })
 })
 app.post('/send', (req, res) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
