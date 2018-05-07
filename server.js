@@ -47,5 +47,5 @@ app.get('*',function(req, res, next) {
 //Api routing
 
 
-const port = 3000;
+const port = 5000;
 app.listen(port, console.log(`Connected to ${port}`))
