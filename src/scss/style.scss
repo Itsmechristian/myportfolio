@@ -719,6 +719,22 @@ footer{
     }
   }
 }
+
+.floating{
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url('/images/portfolio/arrowup.png');
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+  bottom: 5%;
+  right: 5%;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #ED46AA;
+  position: fixed;
+}
 @media screen and(max-width: 990px) {
   .about{
     .container{
@@ -782,6 +798,7 @@ footer{
 
     .container{
       .links{
+        cursor: pointer;
         display: none;
       }
       .hamburger-menu{
@@ -924,6 +941,7 @@ footer{
   }
   footer{
     .container{
+      width: 90%;
       .contact-form{
         form{
 
@@ -938,6 +956,9 @@ footer{
              height: 150px;
            }
          }
+        }
+        .info-wrapper{
+          padding: 0px;
         }
       }
     }
