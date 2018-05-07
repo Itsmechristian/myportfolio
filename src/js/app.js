@@ -1,28 +1,24 @@
 "use strict";
-let links = document.querySelectorAll(".links");
-links.forEach(e => {
-    e.addEventListener("click", function(event) {
-        let section = document.getElementById(e.textContent.toLowerCase());
+
+
+let dropdownlinks = document.querySelectorAll('.dropdownlinks');
+
+dropdownlinks.forEach(x => {
+    x.addEventListener('click', function() {
         dropdown.classList.add("deanimate");
-        dropdown.classList.remove("animate");
-        window.scroll({
-            top: section.offsetTop,
-            behavior: "auto"
-        })
+        dropdown.classList.remove("animate")
     })
-});
-let home = document.getElementById("home");
-home.addEventListener("click", function() {
-    dropdown.classList.add("deanimate");
-    dropdown.classList.remove("animate")
-});
+}) 
+ 
 let menu = document.getElementById("menu");
 let dropdown = document.getElementById("dropdown");
 let dropdownItems = document.querySelectorAll(".dropdown-item");
+
 window.onresize = function() {
     dropdown.classList.remove("deanimate");
     dropdown.classList.remove("animate")
 };
+
 menu.addEventListener("click", function() {
     if (dropdown.classList[1] === "animate") {
         dropdown.classList.add("deanimate");
@@ -32,19 +28,7 @@ menu.addEventListener("click", function() {
         dropdown.classList.remove("deanimate")
     }
 });
-let dropdownlinks = document.querySelectorAll(".dropdownlinks");
-dropdownlinks.forEach(e => {
-    e.addEventListener("click", function(event) {
-        let section = document.getElementById(e.textContent.toLowerCase());
 
-        dropdown.classList.add("deanimate");
-        dropdown.classList.remove("animate");
-        window.scrollTo({
-            top: (section.getAttribute('id') === 'contact') ? section.offsetTop - 200 : section.offsetTop,
-            behavior: "smooth"
-        })
-    })
-});
 let animation = obj => {
     let el = document.querySelectorAll(obj.elementClassOrId);
     let styleElement = () => {
