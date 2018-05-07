@@ -7,7 +7,7 @@ links.forEach(e => {
         dropdown.classList.remove("animate");
         window.scrollTo({
             top: section.offsetTop,
-            behavior: "smooth"
+            behavior: "auto"
         })
     })
 });
