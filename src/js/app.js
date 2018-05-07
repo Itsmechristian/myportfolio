@@ -5,7 +5,7 @@ links.forEach(e => {
         let section = document.getElementById(e.textContent.toLowerCase());
         dropdown.classList.add("deanimate");
         dropdown.classList.remove("animate");
-        window.scrollTo({
+        window.scroll({
             top: section.offsetTop,
             behavior: "auto"
         })
