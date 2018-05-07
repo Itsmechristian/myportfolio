@@ -40,9 +40,10 @@ function animationHandler() {
     animateElement('.icon-paragraph', 1300);
     animateElement('.otherSkillsHeading', 1700);
     animateElement('.skill-wrapper', 1700);
+    animateElement('.projectsheading', 2200);
+    animateElement('.project', 2500);
   
-
-     function animateElement(element, range) {
+    function animateElement(element, range) {
         let el = document.querySelectorAll(element);
         el.forEach(e => {
             if(window.pageYOffset > (range - windowHeight) + e.offsetTop) {

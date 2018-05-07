@@ -18,10 +18,10 @@
                 <span>My name is Christian James</span>
             </h3>
             <div class="bodytext-wrapper">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur perspiciatis ullam unde tempora neque veniam?
-                Dolorem blanditiis veniam id, minima culpa fugit ut, facilis nostrum eos libero, repellat molestiae reiciendis?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, repellat.</p>
-            <a href="#">Contact</a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur perspiciatis ullam unde tempora neque veniam?
+                    Dolorem blanditiis veniam id, minima culpa fugit ut, facilis nostrum eos libero, repellat molestiae reiciendis?</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, repellat.</p>
+                <a href="#">Contact</a>
             </div>
         </div>
     </div>
@@ -117,20 +117,22 @@
 <div class="projects">
     <div class="container">
         <div class="heading">
-            <h1>My <span>Work</span></h1>
+            <h1 class="projectsheading">My
+                <span>Work</span>
+            </h1>
         </div>
         <div class="projects-wrapper">
             <div class="project">
             </div>
-                        <div class="project">
+            <div class="project">
             </div>
-                        <div class="project">
+            <div class="project">
             </div>
-                        <div class="project">
+            <div class="project">
             </div>
-                        <div class="project">
+            <div class="project">
             </div>
-                        <div class="project">
+            <div class="project">
             </div>
         </div>
     </div>
@@ -140,9 +142,51 @@
 <footer>
     <div class="container">
         <div class="contact-form">
-            <div class="heading">
-                <h1>Get in touch</h1>
-            </div>            
+            <form>
+                <div class="heading">
+                    <h1>Get in touch</h1>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" name="name" id="name">
+                    <input type="email" name="email" id="email">
+                    <input type="text" name="company" id="company">
+                </div>
+                <div class="textarea-wrapper">
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    <button type="submit">SUBMIT</button>
+                </div>
+            </form>
+            <div class="info-wrapper">
+                <section>
+                    <div class="logo">
+                        <img src="/images/portfolio/map.png" alt="" height="20" width="20">
+                    </div>
+                    <div class="info">
+                        <h5>Location</h5>
+                        <small>Melton Mowbray, United Kingdom</small>
+                    </div>
+                </section>
+                                <section>
+                    <div class="logo">
+                        <img src="/images/portfolio/github-brandico.png" alt="" height="20" width="20">
+                    </div>
+                    <div class="info">
+                        <h5>Github</h5>
+                        <small>https://github.com/Itsmechristian</small>
+                    </div>
+                </section>
+                                <section>
+                    <div class="logo">
+                        <img src="/images/portfolio/email.png" alt="" height="20" width="20">
+                    </div>
+                    <div class="info">
+                        <h5>Email</h5>
+                        <small>contact@itsmechristian.co.uk</small>
+                    </div>
+                </section>
+
+            </div>
         </div>
     </div>
+</footer>
 </footer>
