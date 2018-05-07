@@ -4,19 +4,19 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "concurrently \"npm run scss:compile\" \"nodemon app.js\"",
+    "start": "concurrently \"npm run scss:compile\" \"nodemon server.js\"",
     "scss:compile": "node-sass --watch src/scss -o src/css"
   },
   "keywords": [],
   "author": "Sijey",
   "license": "MIT",
   "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
-    "express-handlebars": "^3.0.0",
-    "mongoose": "^5.0.11"
+    "express-handlebars": "^3.0.0"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",

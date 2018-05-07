@@ -114,7 +114,7 @@
         </div>
     </div>
 </div>
-<div class="projects">
+<div class="projects" id="projects">
     <div class="container">
         <div class="heading">
             <h1 class="projectsheading">My
@@ -122,8 +122,10 @@
             </h1>
         </div>
         <div class="projects-wrapper">
-            <div class="project">
-            </div>
+            <a href="https://jeyxxsi.tk">
+                <div class="project">
+                </div>
+            </a>
             <div class="project">
             </div>
             <div class="project">
@@ -139,21 +141,24 @@
 </div>
 <div class="google-map" id="map">
 </div>
-<footer>
+<footer id="contact">
     <div class="container">
         <div class="contact-form">
-            <form>
+            <form action="/send" method="POST">
                 <div class="heading">
                     <h1>Get in touch</h1>
                 </div>
                 <div class="input-wrapper">
-                    <input type="text" name="name" id="name">
-                    <input type="email" name="email" id="email">
-                    <input type="text" name="company" id="company">
+                    <input type="text" name="name" id="name" placeholder="Name...*">
+                    <small id="nameerror">Name is required</small>
+                    <input type="email" name="email" id="email" placeholder="Email..*">
+                    <small id="emailerror">Email is required</small>
+                    <input type="text" name="company" id="company" placeholder="Company name...">
                 </div>
                 <div class="textarea-wrapper">
-                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                    <button type="submit">SUBMIT</button>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message*"></textarea>
+                    <small id="messageerror">Message is required</small>
+                    <button type="submit" id="button">SUBMIT</button>
                 </div>
             </form>
             <div class="info-wrapper">
@@ -184,9 +189,7 @@
                         <small>contact@itsmechristian.co.uk</small>
                     </div>
                 </section>
-
             </div>
         </div>
     </div>
-</footer>
 </footer>
