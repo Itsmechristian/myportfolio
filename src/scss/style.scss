@@ -482,8 +482,8 @@ header{
   }
 }
 .projects{
+  background-color: #fff;
   height: auto;
-  background-image: url('/images/portfolio/background.png');
   background-position: 50% 100%;
   background-repeat: no-repeat;
   
@@ -516,6 +516,8 @@ header{
           height: 300px;
           box-shadow: #ccc 0 0 27px 0;
           background-position: center;
+          background-size: 900px;
+          position: relative;
 
           &.animate{
             animation: slideUp2 1s both;
@@ -527,20 +529,64 @@ header{
             background-image: url('/images/portfolio/project1.png')
           }
           &:nth-child(2) {
+            background-size: 900px;
             animation-delay: 0.2s;
+            background-image: url('/images/portfolio/placeholder.png')
           }
           
           &:nth-child(3) {
             animation-delay: 0.3s;
+            background-image: url('/images/portfolio/placeholder.png')
+            
           }
           &:nth-child(4) {
             animation-delay: 0.4s;
+            background-image: url('/images/portfolio/placeholder.png')
+            
           }
           &:nth-child(5) {
             animation-delay: 0.5s;
+            background-image: url('/images/portfolio/placeholder.png')
+            
           }
           &:nth-child(6) {
             animation-delay: 0.6s;
+            background-image: url('/images/portfolio/placeholder.png')
+          }
+
+          & .project-hover{
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              opacity: 0;
+              transition: opacity .5s ease-in-out;
+              background: #fff;
+              text-align: center;   
+              padding-top: 50px;
+
+              .text-wrapper{
+                opacity: 0;
+                transform: translateY(-70px);
+                transition: .5s transform, .5s opacity;
+           
+
+                p{
+                  color: #2b62b4;
+                }
+              }
+          }
+
+          &:hover{
+            & .project-hover{
+              opacity: .8;
+
+              .text-wrapper{
+                opacity: 1;
+                transform: translateY(0px);
+              }
+            }
           }
       }
     }
@@ -597,8 +643,8 @@ footer{
             box-sizing: border-box;
             -moz-box-sizing: border-box;
             -webkit-box-sizing: border-box;
-            height: 27px;
-            border: 2px solid #f8f8f8;
+            height: 35px;
+            border: 1px solid rgb(243, 243, 243);
             margin: 10px 0px;
             width: 100%;
             padding: 0px 5px;
@@ -625,11 +671,12 @@ footer{
           width: 55%;
 
           textarea{
+            padding: 5px;
             box-sizing: border-box;
             -moz-box-sizing: border-box;
             -webkit-box-sizing: border-box;
-            height: 80px;
-            border: 2px solid #f8f8f8;
+            height: 100px;
+            border: 1px solid rgb(243, 243, 243);
             resize: none;
             width: 100%;
           }
@@ -709,6 +756,7 @@ footer{
             width: 50%;
           }
          .textarea-wrapper{
+           padding: 0 10px;
            display: block;
            width: 70%;
 
@@ -723,7 +771,7 @@ footer{
 }
 
 .floating{
-  background-size: 50px;
+  background-size: 20px;
   background-repeat: no-repeat;
   background-position: center center;
   background-image: url('/images/portfolio/arrowup.png');
@@ -731,8 +779,8 @@ footer{
   transition: opacity .5s ease-in-out;
   bottom: 5%;
   right: 5%;
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background-color: #ED46AA;
   position: fixed;
@@ -954,7 +1002,6 @@ footer{
            width: 100%;
 
            textarea{
-             padding: 0;
              height: 150px;
            }
          }

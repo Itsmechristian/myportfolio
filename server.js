@@ -38,8 +38,19 @@ app.post('/send', (req, res) => {
     `,
   };
   sgMail.send(msg).then(response => {
-    res.redirect('/')
+    res.redirect('/success?valid=' + true)
+  }).catch(err => {
+    res.redirect('/success?valid=' + false)
+    
   });
+})
+app.get('/success', (req, res) => {
+ if(Boolean(req.query.valid) === true){
+   res.render('success')
+ }
+ else{
+   res.redirect('/')
+ }
 })
 
 

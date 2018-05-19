@@ -307,8 +307,8 @@ header {
           width: 60%; }
 
 .projects {
+  background-color: #fff;
   height: auto;
-  background-image: url("/images/portfolio/background.png");
   background-position: 50% 100%;
   background-repeat: no-repeat; }
   .projects .container {
@@ -329,7 +329,9 @@ header {
         width: 30%;
         height: 300px;
         box-shadow: #ccc 0 0 27px 0;
-        background-position: center; }
+        background-position: center;
+        background-size: 900px;
+        position: relative; }
         .projects .container .projects-wrapper .project.animate {
           animation: slideUp2 1s both; }
         .projects .container .projects-wrapper .project:nth-child(1) {
@@ -337,15 +339,43 @@ header {
           background-position-y: 0%;
           background-image: url("/images/portfolio/project1.png"); }
         .projects .container .projects-wrapper .project:nth-child(2) {
-          animation-delay: 0.2s; }
+          background-size: 900px;
+          animation-delay: 0.2s;
+          background-image: url("/images/portfolio/placeholder.png"); }
         .projects .container .projects-wrapper .project:nth-child(3) {
-          animation-delay: 0.3s; }
+          animation-delay: 0.3s;
+          background-image: url("/images/portfolio/placeholder.png"); }
         .projects .container .projects-wrapper .project:nth-child(4) {
-          animation-delay: 0.4s; }
+          animation-delay: 0.4s;
+          background-image: url("/images/portfolio/placeholder.png"); }
         .projects .container .projects-wrapper .project:nth-child(5) {
-          animation-delay: 0.5s; }
+          animation-delay: 0.5s;
+          background-image: url("/images/portfolio/placeholder.png"); }
         .projects .container .projects-wrapper .project:nth-child(6) {
-          animation-delay: 0.6s; }
+          animation-delay: 0.6s;
+          background-image: url("/images/portfolio/placeholder.png"); }
+        .projects .container .projects-wrapper .project .project-hover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: opacity .5s ease-in-out;
+          background: #fff;
+          text-align: center;
+          padding-top: 50px; }
+          .projects .container .projects-wrapper .project .project-hover .text-wrapper {
+            opacity: 0;
+            transform: translateY(-70px);
+            transition: .5s transform, .5s opacity; }
+            .projects .container .projects-wrapper .project .project-hover .text-wrapper p {
+              color: #2b62b4; }
+        .projects .container .projects-wrapper .project:hover .project-hover {
+          opacity: .8; }
+          .projects .container .projects-wrapper .project:hover .project-hover .text-wrapper {
+            opacity: 1;
+            transform: translateY(0px); }
 
 .google-map {
   width: 100%;
@@ -385,8 +415,8 @@ footer {
           box-sizing: border-box;
           -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
-          height: 27px;
-          border: 2px solid #f8f8f8;
+          height: 35px;
+          border: 1px solid #f3f3f3;
           margin: 10px 0px;
           width: 100%;
           padding: 0px 5px;
@@ -404,11 +434,12 @@ footer {
         display: inline-block;
         width: 55%; }
         footer .container .contact-form form .textarea-wrapper textarea {
+          padding: 5px;
           box-sizing: border-box;
           -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
-          height: 80px;
-          border: 2px solid #f8f8f8;
+          height: 100px;
+          border: 1px solid #f3f3f3;
           resize: none;
           width: 100%; }
         footer .container .contact-form form .textarea-wrapper button {
@@ -456,13 +487,14 @@ footer {
     display: block;
     width: 50%; }
   footer .container .contact-form form .textarea-wrapper {
+    padding: 0 10px;
     display: block;
     width: 70%; }
     footer .container .contact-form form .textarea-wrapper textarea {
       height: 150px; } }
 
 .floating {
-  background-size: 50px;
+  background-size: 20px;
   background-repeat: no-repeat;
   background-position: center center;
   background-image: url("/images/portfolio/arrowup.png");
@@ -470,8 +502,8 @@ footer {
   transition: opacity .5s ease-in-out;
   bottom: 5%;
   right: 5%;
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background-color: #ED46AA;
   position: fixed; }
@@ -586,7 +618,6 @@ footer {
     footer .container .contact-form form .textarea-wrapper {
       width: 100%; }
       footer .container .contact-form form .textarea-wrapper textarea {
-        padding: 0;
         height: 150px; }
     footer .container .contact-form .info-wrapper {
       padding: 0px; } }

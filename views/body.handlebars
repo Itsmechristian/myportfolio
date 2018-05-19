@@ -124,6 +124,12 @@
         <div class="projects-wrapper">
             <a href="https://jeyxxsi.tk">
                 <div class="project">
+                    <div class="project-hover">
+                        <div class="text-wrapper">
+           <h3>Specialist Agency</h3>
+                            <p>Built with Angular</p>
+                        </div>
+                    </div>
                 </div>
             </a>
             <div class="project">
@@ -149,14 +155,14 @@
                     <h1>Get in touch</h1>
                 </div>
                 <div class="input-wrapper">
-                    <input type="text" name="name" id="name" placeholder="Name...*">
+                    <input type="text" name="name" id="name" placeholder="Name...*" autocomplete="name">
                     <small id="nameerror">Name is required</small>
-                    <input type="email" name="email" id="email" placeholder="Email..*">
+                    <input type="email" name="email" id="email" placeholder="Email..*" autocomplete="email">
                     <small id="emailerror">Email is required</small>
-                    <input type="text" name="company" id="company" placeholder="Company name...">
+                    <input type="text" name="company" id="company" placeholder="Company name..." autocomplete="oragization">
                 </div>
                 <div class="textarea-wrapper">
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message*"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message...*" autocomplete="message"></textarea>
                     <small id="messageerror">Message is required</small>
                     <button type="submit" id="button">SUBMIT</button>
                 </div>
@@ -195,3 +201,6 @@
 </footer>
 <a href="#"><div class="floating" id="float">
 </div></a>
+  <script src="/js/googlemap.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuRhBEo7izyqLa_rAwKgYS-CSjrruSX7g&callback=initMap"
+  type="text/javascript"></script>
