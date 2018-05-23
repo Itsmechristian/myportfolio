@@ -97,6 +97,27 @@
     transform: perspective(400px);
     opacity: 1; } }
 
+    @keyframes navbarAnimationShow {
+      from {
+        max-height: 0px;
+        display: none;
+      }
+      to{
+        max-height: 200px;
+        display: block;
+      }
+    }
+
+    @keyframes navbarAnimationHide {
+      from {
+        max-height: 200px;
+        display: block;
+      }
+      to{
+        max-height: 0px;
+        display: none;
+      }
+    }
 
 :root{
   scroll-behavior: smooth;
@@ -294,7 +315,7 @@ header{
   background-color: #fff;
 
   .container{
-    padding: 100px 0px;
+    padding: 100px 0px 50px 0px;
     height: 100%;
 
     .heading{
@@ -871,27 +892,6 @@ footer{
             top: 16px;
           }
         }
-      }
-    }
-    @keyframes navbarAnimationShow {
-      from {
-        max-height: 0px;
-        display: none;
-      }
-      to{
-        max-height: 200px;
-        display: block;
-      }
-    }
-
-    @keyframes navbarAnimationHide {
-      from {
-        max-height: 200px;
-        display: block;
-      }
-      to{
-        max-height: 0px;
-        display: none;
       }
     }
 
