@@ -2,6 +2,14 @@
   scroll-behavior: smooth;
 }
 
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 @font-face {
   font-family: segui;
   src: url('/fonts/segui.ttf');
@@ -102,28 +110,6 @@
   }
 }
 
-@keyframes navbarAnimationShow {
-  from {
-    max-height: 0px;
-    display: none;
-  }
-  to {
-    max-height: 200px;
-    display: block;
-  }
-}
-
-@keyframes navbarAnimationHide {
-  from {
-    max-height: 200px;
-    display: block;
-  }
-  to {
-    max-height: 0px;
-    display: none;
-  }
-}
-
 :root {
   scroll-behavior: smooth;
 }
@@ -175,6 +161,7 @@ nav {
     justify-content: space-between;
 
     .logo {
+      cursor: pointer;
       height: 40px;
       width: auto;
 
@@ -757,10 +744,10 @@ footer {
           width: 45%;
 
           &:nth-child(1) {
-            background-size: 450px;
+            background-size: 460px;
           }
           &:nth-child(2) {
-            background-size: 450px;
+            background-size: 460px;
           }
         }
       }
@@ -909,25 +896,24 @@ footer {
     }
 
     .dropdown-menu {
+      overflow: hidden;
       position: absolute;
       top: 100%;
-      height: 180px;
+      max-height: 0px;
       width: 100%;
       background: #566ed5;
       text-align: center;
+      display: block;
+      transition: max-height 0.2s ease-in;
 
       &.animate {
-        display: block;
-        animation: navbarAnimationShow 0.5s both;
-      }
-      &.deanimate {
-        display: block;
-        animation: navbarAnimationHide 0.5s both;
+        max-height: 500px;
+        transition: max-height 0.2s ease-out;
       }
 
       li {
         list-style-type: none;
-        padding: 10px 0px;
+        padding: 15px 0px;
 
         a {
           color: #fff;
@@ -1004,10 +990,10 @@ footer {
         width: 100%;
         .project {
           &:nth-child(1) {
-            background-size: 450px;
+            background-size: 460px;
           }
           &:nth-child(2) {
-            background-size: 450px;
+            background-size: 460px;
           }
         }
       }
@@ -1036,7 +1022,26 @@ footer {
     }
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
+  .container {
+    width: 90% !important;
+  }
+  .projects {
+    .container {
+      .projects-wrapper {
+        .project {
+          &:nth-child(1) {
+            background-size: 350px;
+          }
+          &:nth-child(2) {
+            background-size: 350px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 320px) {
   .projects {
     .container {
       .projects-wrapper {

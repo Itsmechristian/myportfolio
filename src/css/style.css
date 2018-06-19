@@ -1,6 +1,14 @@
 :root {
   scroll-behavior: smooth; }
 
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
 @font-face {
   font-family: segui;
   src: url("/fonts/segui.ttf"); }
@@ -79,22 +87,6 @@
     transform: perspective(400px);
     opacity: 1; } }
 
-@keyframes navbarAnimationShow {
-  from {
-    max-height: 0px;
-    display: none; }
-  to {
-    max-height: 200px;
-    display: block; } }
-
-@keyframes navbarAnimationHide {
-  from {
-    max-height: 200px;
-    display: block; }
-  to {
-    max-height: 0px;
-    display: none; } }
-
 :root {
   scroll-behavior: smooth; }
 
@@ -143,6 +135,7 @@ nav {
     display: flex;
     justify-content: space-between; }
     nav .container .logo {
+      cursor: pointer;
       height: 40px;
       width: auto; }
       nav .container .logo h3 {
@@ -503,9 +496,9 @@ footer {
   .projects .container .projects-wrapper .project {
     width: 45%; }
     .projects .container .projects-wrapper .project:nth-child(1) {
-      background-size: 450px; }
+      background-size: 460px; }
     .projects .container .projects-wrapper .project:nth-child(2) {
-      background-size: 450px; }
+      background-size: 460px; }
   footer .container .contact-form form .input-wrapper {
     display: block;
     width: 50%; }
@@ -583,21 +576,21 @@ footer {
         nav .container .hamburger-menu span:nth-child(3) {
           top: 16px; }
     nav .dropdown-menu {
+      overflow: hidden;
       position: absolute;
       top: 100%;
-      height: 180px;
+      max-height: 0px;
       width: 100%;
       background: #566ed5;
-      text-align: center; }
+      text-align: center;
+      display: block;
+      transition: max-height 0.2s ease-in; }
       nav .dropdown-menu.animate {
-        display: block;
-        animation: navbarAnimationShow 0.5s both; }
-      nav .dropdown-menu.deanimate {
-        display: block;
-        animation: navbarAnimationHide 0.5s both; }
+        max-height: 500px;
+        transition: max-height 0.2s ease-out; }
       nav .dropdown-menu li {
         list-style-type: none;
-        padding: 10px 0px; }
+        padding: 15px 0px; }
         nav .dropdown-menu li a {
           color: #fff; }
   .projects .container .projects-wrapper {
@@ -629,9 +622,9 @@ footer {
   .projects .container .projects-wrapper {
     width: 100%; }
     .projects .container .projects-wrapper .project:nth-child(1) {
-      background-size: 450px; }
+      background-size: 460px; }
     .projects .container .projects-wrapper .project:nth-child(2) {
-      background-size: 450px; }
+      background-size: 460px; }
   footer .container {
     width: 90%; }
     footer .container .contact-form form .input-wrapper {
@@ -643,7 +636,15 @@ footer {
     footer .container .contact-form .info-wrapper {
       padding: 0px; } }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
+  .container {
+    width: 90% !important; }
+  .projects .container .projects-wrapper .project:nth-child(1) {
+    background-size: 350px; }
+  .projects .container .projects-wrapper .project:nth-child(2) {
+    background-size: 350px; } }
+
+@media screen and (max-width: 320px) {
   .projects .container .projects-wrapper .project:nth-child(1) {
     background-size: 320px; }
   .projects .container .projects-wrapper .project:nth-child(2) {
