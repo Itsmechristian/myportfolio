@@ -8,7 +8,6 @@ if (window.location.pathname === '/success') {
   let links = document.querySelectorAll('.link');
 
   links.forEach(x => {
-    console.log(x);
     x.addEventListener('click', function(e) {
       window.scroll({
         top: getElementOffSet(e.target.getAttribute('data-name')),
