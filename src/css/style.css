@@ -593,6 +593,10 @@ footer {
         padding: 15px 0px; }
         nav .dropdown-menu li a {
           color: #fff; }
+  header {
+    background-position: 35% 100%; }
+    header .container .text {
+      top: 20%; }
   .about .container {
     padding: 50px 0px 100px 0px; }
   .good-at .container {

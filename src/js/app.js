@@ -42,18 +42,19 @@ if (window.location.pathname === '/success') {
     });
   }
 
-  let dropdownlinks = document.querySelectorAll('.dropdownlinks');
+  let menu = document.getElementById('menu');
+  let dropdown = document.getElementById('dropdown');
+  let dropdownItems = document.querySelectorAll('.dropdown-item');
+
+  let dropdownlinks = document.querySelectorAll('.link');
 
   dropdownlinks.forEach(x => {
     x.addEventListener('click', function() {
+      console.log(1);
       dropdown.classList.add('deanimate');
       dropdown.classList.remove('animate');
     });
   });
-
-  let menu = document.getElementById('menu');
-  let dropdown = document.getElementById('dropdown');
-  let dropdownItems = document.querySelectorAll('.dropdown-item');
 
   window.onresize = function() {
     dropdown.classList.remove('animate');
