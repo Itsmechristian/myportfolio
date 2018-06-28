@@ -7,24 +7,34 @@ if (window.location.pathname === '/success') {
 } else {
   let links = document.querySelectorAll('.link');
 
-  links.forEach(x => {
-    x.addEventListener('click', function(e) {
-      window.scroll({
-        top: getElementOffSet(e.target.getAttribute('data-name')),
-        behavior: 'smooth'
-      });
-
-      function getElementOffSet(id) {
-        let el = document.getElementById(id.toLowerCase());
-
-        if (id === 'contact') {
-          return el.offsetTop - 100;
-        } else {
-          return el.offsetTop;
-        }
-      }
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    links.forEach(x => {
+      x.setAttribute('href', x.getAttribute('data-name'));
     });
-  });
+  } else {
+    links.forEach(x => {
+      x.addEventListener('click', function(e) {
+        window.scroll({
+          top: getElementOffSet(e.target.getAttribute('data-name')),
+          behavior: 'smooth'
+        });
+
+        function getElementOffSet(id) {
+          let el = document.getElementById(id.toLowerCase());
+
+          if (id === 'contact') {
+            return el.offsetTop - 100;
+          } else {
+            return el.offsetTop;
+          }
+        }
+      });
+    });
+  }
 
   let dropdownlinks = document.querySelectorAll('.dropdownlinks');
 
