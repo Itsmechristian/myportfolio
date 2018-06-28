@@ -1,5 +1,17 @@
 'use strict';
 
+window.onload = function() {
+  let loader = document.getElementById('loader');
+
+  document.body.style.overflowY = 'none';
+  document.body.style.overflowX = 'hidden';
+  loader.style.opacity = 0;
+
+  setTimeout(function() {
+    loader.style.display = 'none';
+  }, 500);
+};
+
 if (window.location.pathname === '/success') {
   setTimeout(function() {
     window.location = '/';
