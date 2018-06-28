@@ -921,8 +921,19 @@ footer {
       }
     }
   }
+  .about {
+    .container {
+      padding: 50px 0px 100px 0px;
+    }
+  }
+  .good-at {
+    .container {
+      padding: 50px 0px;
+    }
+  }
   .projects {
     .container {
+      padding: 50px 0px;
       .projects-wrapper {
         width: 70%;
 
@@ -1031,10 +1042,10 @@ footer {
       .projects-wrapper {
         .project {
           &:nth-child(1) {
-            background-size: 350px;
+            background-size: 372px;
           }
           &:nth-child(2) {
-            background-size: 350px;
+            background-size: 372px;
           }
         }
       }

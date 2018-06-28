@@ -27,7 +27,13 @@ if (window.location.pathname === '/success') {
           let el = document.getElementById(id.toLowerCase());
 
           if (id === 'contact') {
-            return el.offsetTop - 100;
+            let footer = document.querySelector('footer');
+            window.scroll({
+              top: footer.offsetTop,
+              behavior: 'smooth'
+            });
+
+            return false;
           } else {
             return el.offsetTop;
           }
