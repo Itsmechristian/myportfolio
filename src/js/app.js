@@ -13,7 +13,7 @@ if (window.location.pathname === '/success') {
     )
   ) {
     links.forEach(x => {
-      x.setAttribute('href', x.getAttribute('data-name'));
+      x.setAttribute('href', `#${x.getAttribute('data-name')}`);
     });
   } else {
     links.forEach(x => {
