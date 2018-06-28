@@ -3,7 +3,7 @@
 window.onload = function() {
   let loader = document.getElementById('loader');
 
-  document.body.style.overflowY = 'none';
+  document.body.style.overflowY = 'visible';
   document.body.style.overflowX = 'hidden';
   loader.style.opacity = 0;
 
