@@ -12,19 +12,19 @@
 }
 @font-face {
   font-family: segui;
-  src: url('/fonts/segui.ttf');
+  src: url("/fonts/segui.ttf");
 }
 @font-face {
   font-family: seguisb;
-  src: url('/fonts/seguisb.ttf');
+  src: url("/fonts/seguisb.ttf");
 }
 @font-face {
   font-family: poppins-semibold;
-  src: url('/fonts/Poppins-SemiBold.otf');
+  src: url("/fonts/Poppins-SemiBold.otf");
 }
 @font-face {
   font-family: poppins;
-  src: url('/fonts/Poppins-Regular.otf');
+  src: url("/fonts/Poppins-Regular.otf");
 }
 
 @keyframes slideLeft {
@@ -115,7 +115,6 @@
 }
 body {
   max-width: 100%;
-  overflow: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -123,54 +122,6 @@ body {
   -webkit-box-sizing: border-box;
 }
 
-.loader {
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(90deg, #36a8c2, #566ed5);
-  position: absolute;
-  z-index: 999999;
-  top: 0;
-  left: 0;
-  transition: opacity 0.5s ease-out;
-
-  @keyframes pulsingCircle {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(0.6);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  .animation {
-    position: absolute;
-    z-index: 9699999;
-    height: 100vh;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, 50%);
-    opacity: 1;
-
-    .circle {
-      animation: pulsingCircle 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.2s
-        infinite;
-      display: inline-block;
-      height: 20px;
-      width: 20px;
-      border-radius: 50%;
-      background: #fff;
-      &:nth-child(2) {
-        animation-delay: 0.3s;
-      }
-      &:nth-child(3) {
-        animation-delay: 0.6s;
-      }
-    }
-  }
-}
 h1,
 h2,
 h3,
@@ -256,7 +207,7 @@ nav {
 header {
   height: 600px;
   background-position: 50% 100%;
-  background-image: url('/images/portfolio/background.png');
+  background-image: url("/images/portfolio/background.png");
   background-repeat: no-repeat;
   background-color: #fff;
 
@@ -425,7 +376,7 @@ header {
   height: auto;
   background-repeat: repeat-x;
   background-color: #f2f2f2;
-  background-image: url('/images/portfolio/background2.jpg');
+  background-image: url("/images/portfolio/background2.jpg");
 
   .container {
     padding: 200px 0 100px 0;
@@ -581,30 +532,30 @@ header {
         &:nth-child(1) {
           background-size: 430px;
           background-position-y: 0%;
-          background-image: url('/images/portfolio/project1.png');
+          background-image: url("/images/portfolio/project1.png");
         }
         &:nth-child(2) {
           background-size: 380px;
           background-position-y: 0%;
           animation-delay: 0.2s;
-          background-image: url('/images/portfolio/project2.png');
+          background-image: url("/images/portfolio/project2.png");
         }
 
         &:nth-child(3) {
           animation-delay: 0.3s;
-          background-image: url('/images/portfolio/placeholder.png');
+          background-image: url("/images/portfolio/placeholder.png");
         }
         &:nth-child(4) {
           animation-delay: 0.4s;
-          background-image: url('/images/portfolio/placeholder.png');
+          background-image: url("/images/portfolio/placeholder.png");
         }
         &:nth-child(5) {
           animation-delay: 0.5s;
-          background-image: url('/images/portfolio/placeholder.png');
+          background-image: url("/images/portfolio/placeholder.png");
         }
         &:nth-child(6) {
           animation-delay: 0.6s;
-          background-image: url('/images/portfolio/placeholder.png');
+          background-image: url("/images/portfolio/placeholder.png");
         }
 
         & .project-hover {
@@ -830,7 +781,7 @@ footer {
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url('/images/portfolio/arrowup.png');
+  background-image: url("/images/portfolio/arrowup.png");
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   bottom: 5%;
